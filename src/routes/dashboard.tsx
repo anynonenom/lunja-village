@@ -1,7 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FadeUp } from "../components/AnimatedSection";
+import { useAuth } from "../hooks/useAuth";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
@@ -23,7 +24,29 @@ const mockBookings = [
 ];
 
 function DashboardPage() {
+  const { user, loading, isAdmin, signOut } = useAuth();
+  const navigate = useNavigate();
   const [statusFilter, setStatusFilter] = useState<string>("all");
+
+  useEffect(() => {
+    if (!loading && (!user || !isAdmin)) {
+      navigate({ to: "/login" });
+    }
+  }, [loading, user, isAdmin, navigate]);
+
+  if (loading) {
+    return (
+      <main className="pt-20 min-h-screen bg-warm flex items-center justify-center">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+          className="w-8 h-8 border-2 border-keppel border-t-transparent rounded-full"
+        />
+      </main>
+    );
+  }
+
+  if (!user || !isAdmin) return null;
 
   const filtered = statusFilter === "all"
     ? mockBookings
@@ -47,13 +70,22 @@ function DashboardPage() {
               <h1 className="font-serif-brand text-3xl text-ink">
                 Booking <span className="font-elegant text-coral">Dashboard</span>
               </h1>
+              <p className="text-xs text-mud/40 mt-1 font-body-brand">{user.email}</p>
             </div>
-            <Link
-              to="/"
-              className="rounded-full bg-sand px-6 py-2 font-display-brand text-xs tracking-[0.15em] uppercase text-mud/60 hover:bg-keppel hover:text-cream transition-all"
-            >
-              ← Back to Site
-            </Link>
+            <div className="flex gap-3">
+              <button
+                onClick={signOut}
+                className="rounded-full bg-coral/10 px-6 py-2 font-display-brand text-xs tracking-[0.15em] uppercase text-coral hover:bg-coral hover:text-cream transition-all"
+              >
+                Sign Out
+              </button>
+              <Link
+                to="/"
+                className="rounded-full bg-sand px-6 py-2 font-display-brand text-xs tracking-[0.15em] uppercase text-mud/60 hover:bg-keppel hover:text-cream transition-all"
+              >
+                ← Back to Site
+              </Link>
+            </div>
           </div>
         </FadeUp>
 

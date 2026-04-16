@@ -2,6 +2,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { PageLoader } from "../components/PageLoader";
+import { SmoothScroll } from "../components/SmoothScroll";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -65,6 +66,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <>
+      <SmoothScroll />
       <PageLoader />
       <Header />
       <Outlet />

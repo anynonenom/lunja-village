@@ -43,7 +43,7 @@ export function Header() {
             <img
               src={logoLunja}
               alt="Lunja Village"
-              className={`-my-2 md:-my-8 h-16 md:h-28 lg:h-36 w-auto transition-all duration-300 ${
+              className={`-my-4 md:-my-8 h-24 md:h-28 lg:h-36 w-auto transition-all duration-300 ${
                 isTransparent ? "brightness-0 invert opacity-80" : "brightness-0 opacity-70"
               }`}
             />

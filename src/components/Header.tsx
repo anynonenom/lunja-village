@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoLunja from "../assets/logo-lunja.png";
 
 const navLinks = [
   { to: "/" as const, label: "Home", num: "01" },
@@ -33,17 +34,19 @@ export function Header() {
         transition={{ delay: 1.8, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isTransparent
-            ? "bg-transparent py-6"
-            : "bg-cream/80 backdrop-blur-xl border-b border-mud/5 py-3"
+            ? "bg-transparent py-1"
+            : "bg-cream/80 backdrop-blur-xl border-b border-mud/5 py-1"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-12">
           <Link to="/" className="flex items-center gap-2 group">
-            <span className={`font-script text-2xl lg:text-3xl tracking-wide transition-colors ${
-              isTransparent ? "text-cream" : "text-ink"
-            }`}>
-              Lunja <span className="text-coral">Village</span>
-            </span>
+            <img
+              src={logoLunja}
+              alt="Lunja Village"
+              className={`-my-8 h-32 lg:h-40 w-auto transition-all duration-300 ${
+                isTransparent ? "brightness-0 invert opacity-80" : "brightness-0 opacity-70"
+              }`}
+            />
           </Link>
 
           {/* Desktop nav */}

@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logoLunja from "../assets/logo-lunja.png";
 
 export function Footer() {
   return (
@@ -10,9 +11,11 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <span className="font-script text-3xl text-cream">
-              Lunja <span className="text-coral">Village</span>
-            </span>
+            <img
+              src={logoLunja}
+              alt="Lunja Village"
+              className="h-40 w-auto brightness-0 invert"
+            />
             <p className="mt-4 font-serif-brand italic text-cream/40 text-sm leading-relaxed">
               "Là où l'Atlas embrasse le courant atlantique."
             </p>
@@ -49,15 +52,31 @@ export function Footer() {
             <p className="text-sm">Agadir, Morocco</p>
             <p className="text-sm mt-2">hello@lunjavillage.com</p>
             <div className="flex gap-4 mt-4">
-              <span className="text-lg cursor-pointer hover:text-coral transition-colors">📷</span>
+
+
+                               
+                                <div className="flex gap-4" >
+                                  {["Instagram", "TikTok", "YouTube"].map((s) => (
+                                    <a
+                                      key={s}
+                                      href="#"
+                                      className="font-elegant text-2xl text-white hover:text-coral transition-colors"
+                                    >
+                                      {s}
+                                    </a>
+                                  ))}
+                                </div>
+
+
+              {/* <span className="text-lg cursor-pointer hover:text-coral transition-colors">📷</span>
               <span className="text-lg cursor-pointer hover:text-coral transition-colors">🌐</span>
-              <span className="text-lg cursor-pointer hover:text-coral transition-colors">📘</span>
+              <span className="text-lg cursor-pointer hover:text-coral transition-colors">📘</span> */}
             </div>
           </div>
         </div>
 
         <div className="mt-16 border-t border-cream/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs tracking-widest uppercase text-cream/25">
+          <p className="font-elegant text-xs tracking-widest uppercase text-cream/25">
             © 2026 Lunja Village — MADAEF
           </p>
           <p className="text-xs text-cream/20 font-serif-brand italic">

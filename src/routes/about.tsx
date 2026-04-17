@@ -41,7 +41,7 @@ function AboutPage() {
           >
             Chapter One
           </motion.p>
-          <h1 className="font-script text-7xl md:text-[12vw] text-cream leading-[0.9] max-w-5xl">
+          <h1 className="font-script text-5xl md:text-7xl lg:text-[12vw] text-cream leading-[0.9] max-w-5xl">
             <span className="block overflow-hidden">
               <motion.span
                 initial={{ y: "100%" }} animate={{ y: "0%" }}
@@ -67,7 +67,7 @@ function AboutPage() {
       {/* EDITORIAL INTRO */}
       <section className="bg-paper bg-grain section-padding">
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-12">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-12">
             <div className="lg:col-span-1">
               <p className="font-elegant text-7xl text-coral leading-none">L</p>
             </div>

@@ -44,7 +44,7 @@ function GalleryPage() {
   return (
     <main className="overflow-hidden">
       {/* HERO */}
-      <section className="relative pt-40 pb-20 bg-ink overflow-hidden">
+      <section className="relative pt-28 pb-12 md:pt-40 md:pb-20 bg-ink overflow-hidden">
         <div className="absolute -top-10 -right-10 font-script text-[25vw] text-coral/[0.08] leading-none select-none pointer-events-none">
           frames
         </div>
@@ -55,7 +55,7 @@ function GalleryPage() {
           >
             ◊ Gallery
           </motion.p>
-          <h1 className="font-script text-7xl md:text-[10vw] text-cream leading-[0.9]">
+          <h1 className="font-script text-5xl md:text-7xl lg:text-[10vw] text-cream leading-[0.9]">
             <span className="block overflow-hidden">
               <motion.span
                 initial={{ y: "100%" }} animate={{ y: "0%" }}
@@ -103,7 +103,7 @@ function GalleryPage() {
           </FadeUp>
 
           {/* Editorial collage grid */}
-          <motion.div layout className="grid grid-cols-12 gap-4">
+          <motion.div layout className="grid grid-cols-12 gap-2 md:gap-4">
             <AnimatePresence mode="popLayout">
               {filtered.map((img, i) => {
                 // Editorial size pattern

@@ -106,7 +106,7 @@ function HomePage() {
             Imi Ouddar · Taghazout · Morocco
           </motion.p>
 
-          <h1 className="font-script text-[18vw] md:text-[12vw] lg:text-[10vw] text-cream leading-[0.9] tracking-tight">
+          <h1 className="font-script text-[16vw] sm:text-[14vw] md:text-[12vw] lg:text-[10vw] text-cream leading-[0.9] tracking-tight">
             <span className="block overflow-hidden">
               <motion.span
                 initial={{ y: "100%" }}
@@ -142,10 +142,10 @@ function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.9, duration: 0.8 }}
-            className="mt-12 flex flex-col sm:flex-row gap-4 items-center"
+            className="mt-12 flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto"
           >
-            <Link to="/booking">
-              <MagneticButton className="group relative overflow-hidden rounded-full bg-coral px-10 py-4 font-display-brand text-xs tracking-[0.25em] uppercase text-cream transition-colors hover:bg-amber-sun">
+            <Link to="/booking" className="w-full sm:w-auto">
+              <MagneticButton className="group relative overflow-hidden w-full sm:w-auto text-center rounded-full bg-coral px-10 py-4 font-display-brand text-xs tracking-[0.25em] uppercase text-cream transition-colors hover:bg-amber-sun">
                 <span className="relative z-10">Reserve Your Cottage</span>
               </MagneticButton>
             </Link>
@@ -189,7 +189,7 @@ function HomePage() {
           {["Surf", "★", "Yoga", "★", "Co-Work", "★", "Pool", "★", "Tribe", "★", "Sunsets", "★", "Tagine", "★", "Atlas", "★"].map((w, i) => (
             <span
               key={i}
-              className={`font-elegant text-4xl md:text-6xl ${w === "★" ? "text-coral" : "text-cream/80"}`}
+              className={`font-elegant text-2xl md:text-4xl lg:text-6xl ${w === "★" ? "text-coral" : "text-cream/80"}`}
             >
               {w}
             </span>
@@ -200,7 +200,7 @@ function HomePage() {
       {/* ═══════════════ INTRO — EDITORIAL ═══════════════ */}
       <section className="bg-paper bg-grain section-padding relative">
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-12 items-end mb-16">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-end mb-10 lg:mb-16">
             <div className="lg:col-span-2">
               <FadeUp>
                 <p className="font-display-brand text-[10px] tracking-[0.4em] uppercase text-coral writing-vertical hidden lg:block">
@@ -231,7 +231,7 @@ function HomePage() {
 
           {/* Stats strip */}
           <FadeUp delay={0.3}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-mud/10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pt-8 md:pt-12 border-t border-mud/10">
               {[
                 { num: "103", label: "Cottages" },
                 { num: "12", label: "Surf spots" },
@@ -347,7 +347,7 @@ function HomePage() {
               <img
                 src={poolImg}
                 alt="Lunja Village pool terrace at midday"
-                className="h-full w-full object-cover img-cover-golden min-h-[500px]"
+                className="h-full w-full object-cover img-cover-golden min-h-[300px] md:min-h-[500px]"
                 loading="lazy"
               />
             </motion.div>
@@ -457,7 +457,7 @@ function HomePage() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5 }}
-            className="relative order-1 lg:order-2 min-h-[500px] lg:min-h-full overflow-hidden"
+            className="relative order-1 lg:order-2 min-h-[300px] md:min-h-[400px] lg:min-h-full overflow-hidden"
           >
             <img
               src={surfImg}
@@ -467,7 +467,7 @@ function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-l from-transparent to-ink/30" />
             {/* Tag */}
-            <div className="absolute top-8 right-8">
+            <div className="absolute top-4 right-4 md:top-8 md:right-8">
               <div className="bg-cream/95 backdrop-blur px-4 py-3">
                 <p className="font-display-brand text-[10px] tracking-[0.3em] uppercase text-mud/50">Wave forecast</p>
                 <p className="font-serif-brand text-2xl text-ink">2.1m · ↗ NW</p>
@@ -515,7 +515,7 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 relative order-1 lg:order-2 min-h-[500px]">
+          <div className="lg:col-span-7 relative order-1 lg:order-2 min-h-[300px] md:min-h-[400px]">
             <motion.div
               initial={{ scale: 1.15 }}
               whileInView={{ scale: 1 }}

@@ -29,7 +29,7 @@ function ContactPage() {
   return (
     <main className="overflow-hidden">
       {/* HERO */}
-      <section className="relative pt-40 pb-24 bg-coral overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 bg-coral overflow-hidden">
         <div className="absolute inset-0 opacity-30 mix-blend-overlay">
           <img src={rooftopImg} alt="" className="w-full h-full object-cover" />
         </div>
@@ -43,7 +43,7 @@ function ContactPage() {
           >
             ✶ Let's talk
           </motion.p>
-          <h1 className="font-script text-7xl md:text-[12vw] text-cream leading-[0.85]">
+          <h1 className="font-script text-5xl md:text-7xl lg:text-[12vw] text-cream leading-[0.85]">
             <span className="block overflow-hidden">
               <motion.span
                 initial={{ y: "100%" }} animate={{ y: "0%" }}
@@ -60,7 +60,7 @@ function ContactPage() {
       {/* CONTENT */}
       <section className="bg-paper bg-grain section-padding">
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-20">
             {/* INFO */}
             <div className="lg:col-span-5">
               <FadeUp>
@@ -82,7 +82,7 @@ function ContactPage() {
                   { num: "04", label: "Reception", value: "Open 24/7 · Check-in from 15h" },
                 ].map((item) => (
                   <StaggerItem key={item.label}>
-                    <div className="grid grid-cols-[60px_120px_1fr] gap-4 items-baseline group">
+                    <div className="grid grid-cols-[auto_1fr] md:grid-cols-[60px_120px_1fr] gap-x-4 gap-y-1 items-baseline group">
                       <span className="font-display-brand text-[10px] tracking-[0.3em] text-coral">{item.num}</span>
                       <p className="font-display-brand text-[10px] tracking-[0.2em] uppercase text-mud/50">
                         {item.label}
@@ -125,7 +125,7 @@ function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
                     onSubmit={handleSubmit}
-                    className="bg-cream p-10 md:p-14 card-soft space-y-8"
+                    className="bg-cream p-6 md:p-10 lg:p-14 card-soft space-y-8"
                   >
                     <p className="font-elegant text-3xl text-coral">Drop us a line</p>
 

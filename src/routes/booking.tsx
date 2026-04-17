@@ -61,7 +61,7 @@ function BookingPage() {
   return (
     <main className="overflow-hidden">
       {/* HERO */}
-      <section className="relative pt-40 pb-24 bg-ink overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 bg-ink overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img src={cottages[selected].img} alt="" className="w-full h-full object-cover" />
         </div>
@@ -74,7 +74,7 @@ function BookingPage() {
             ✦ Reserve · Breathe · Return
           </motion.p>
           <div className="flex flex-col md:flex-row items-baseline justify-between gap-6">
-            <h1 className="font-script text-7xl md:text-[10vw] text-cream leading-[0.9]">
+            <h1 className="font-script text-5xl md:text-7xl lg:text-[10vw] text-cream leading-[0.9]">
               <span className="block overflow-hidden">
                 <motion.span
                   initial={{ y: "100%" }} animate={{ y: "0%" }}

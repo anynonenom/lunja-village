@@ -8,13 +8,13 @@ export function Footer() {
       <div className="h-1.5 bg-gradient-to-r from-keppel via-celadon via-vanilla via-amber-sun to-coral" />
 
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-12">
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-8 md:gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
             <img
               src={logoLunja}
               alt="Lunja Village"
-              className="h-40 w-auto brightness-0 invert"
+              className="h-24 md:h-40 w-auto brightness-0 invert"
             />
             <p className="mt-4 font-serif-brand italic text-cream/40 text-sm leading-relaxed">
               "Là où l'Atlas embrasse le courant atlantique."
